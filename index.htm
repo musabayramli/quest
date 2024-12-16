@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        section {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: url('https://images.unsplash.com/photo-1558021212-51b6ecfa0db9?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1183&q=80')center/cover;
+        }
+
+        #card {
+            max-width: 700px;
+            width: 100%;
+            height: 250px;
+            background: #fff;
+            border-radius: 10px;
+            text-align: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            gap: 30px;
+        }
+        #btn{
+            padding: 10px 20px;
+            border-radius: 10px;
+            border: none;
+            background: blue;
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <main>
+        <section>
+            <div id="card">
+                <p id="text">At his best, man is the noblest of all animals; separated from law and justice he is the worst.</p>
+                <h4 id="title">Aristotle</h4>
+                <button id="btn">Send</button>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const txt = document.querySelector('#text');
+        const title = document.querySelector('#title');
+        const btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', randomQuestion);
+
+        const quotes = [
+  {
+    quote: `"At his best, man is the noblest of all animals; separated from law and justice he is the worst."`,
+    person: `Aristotle`,
+  },
+  {
+    quote: `"The best way to find yourself is to lose yourself in the service of others."`,
+    person: ` Mahatma Gandhi`,
+  },
+  {
+    quote: `"If you want to live a happy life, tie it to a goal, not to people or things."`,
+    person: ` Albert Einstein`,
+  },
+  {
+    quote: `"Your time is limited, so dont waste it living someone else's life."`,
+    person: ` Steve Jobs`,
+  },
+  {
+    quote: `"Tell me and I forget. Teach me and I remember. Involve me and I learn."`,
+    person: ` Benjamin Franklin`,
+  },
+  {
+    quote: `"If you look at what you have in life, you'll always have more. If you look at what you don't have in life, you'll never have enough."`,
+    person: `Oprah Winfrey`,
+  },
+
+  {
+    quote: `"It does not matter how slowly you go as long as you do not stop."`,
+    person: `Confucius`,
+  },
+  {
+    quote: `"The journey of a thousand miles begins with one step."`,
+    person: `Lao Tzu`,
+  },
+  {
+    quote: `"Our lives begin to end the day we become silent about things that matter."`,
+    person: `Martin Luther King, Jr.`,
+  },
+  {
+    quote: `"Remember that not getting what you want is sometimes a wonderful stroke of luck."`,
+    person: `Dalai Lama`,
+  },
+];
+
+       
+        function randomQuestion() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            const randomQuote = quotes[randomIndex];
+
+            txt.innerText = randomQuote.quote; 
+            title.innerText = `- ${randomQuote.person}`; 
+        };
+
+    </script>
+</body>
+
+</html>
